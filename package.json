@@ -1,0 +1,19 @@
+{
+  "name": "hackoverflow",
+  "version": "1.0.0",
+  "description": "preguntasyrespuestas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DevelopersGTTest/Hack-OverFlow.git"
+  },
+  "author": "Hackobo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DevelopersGTTest/Hack-OverFlow/issues"
+  },
+  "homepage": "https://github.com/DevelopersGTTest/Hack-OverFlow#readme"
+}
