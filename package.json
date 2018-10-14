@@ -4,6 +4,8 @@
   "description": "preguntasyrespuestas",
   "main": "index.js",
   "scripts": {
+    "start": "node server.js",
+    "nodemon": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +17,9 @@
   "bugs": {
     "url": "https://github.com/DevelopersGTTest/Hack-OverFlow/issues"
   },
-  "homepage": "https://github.com/DevelopersGTTest/Hack-OverFlow#readme"
+  "homepage": "https://github.com/DevelopersGTTest/Hack-OverFlow#readme",
+  "dependencies": {
+    "hapi": "^17.6.0",
+    "nodemon": "^1.18.4"
+  }
 }
