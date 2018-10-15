@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "nodemon": "nodemon server.js",
+    "nodemon": "nodemon server.js --ext js,hbs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,7 +19,10 @@
   },
   "homepage": "https://github.com/DevelopersGTTest/Hack-OverFlow#readme",
   "dependencies": {
+    "handlebars": "^4.0.12",
     "hapi": "^17.6.0",
-    "nodemon": "^1.18.4"
+    "inert": "^5.1.0",
+    "nodemon": "^1.18.4",
+    "vision": "^5.4.0"
   }
 }
