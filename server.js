@@ -5,6 +5,9 @@ const path = require('path');
 const handlebars = require('handlebars');
 const vision = require('vision');
 
+//Importando las rutas
+const routes = require('./routes');
+
 const server = hapi.server({
     port: process.env.PORT || 3000,
     host: 'localhost',
@@ -34,28 +37,8 @@ async function init () {
           layoutPath: 'views'
     })
 
-    //Mi home
-      server.route({
-        method: 'GET',
-        path: '/',
-        handler: (req, h) => {
-          return h.view('index', {
-            titulo: 'Lord Hackobo'
-          });
-        }
-      })
-  
-      server.route({
-        method: 'GET',
-        path: '/{param*}',
-        handler: {
-          directory: {
-            path: '.',
-            index: ['index.html']
-          }
-        }
-      })
-  
+    
+      server.route(routes)   
       await server.start()
     } catch (error) {
       console.error(error)
