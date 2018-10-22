@@ -11,7 +11,7 @@ class Users{
 
     //Resiviendo en Bruto la data de todo el usuario
     async create(data){
-        data.pass = await this.constructor.encript(data.pass)
+        data.password = await this.constructor.encript(data.password)
         const newUser = this.collection.push()
         newUser.set(data)
         
@@ -19,9 +19,9 @@ class Users{
     }
 
     //Encriptando la data
-    static async encript(pass){
+    static async encript(password){
         const saltRounds = 10
-        const hashedPass = await bcrypt.hash(pass, saltRounds)
+        const hashedPass = await bcrypt.hash(password, saltRounds)
 
         return hashedPass;
     }
