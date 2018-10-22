@@ -1,5 +1,6 @@
 const bcrypt = require('bcrypt')
 
+//Revisar porque se perde el valor del post
 class Users{
 
     constructor(db){
