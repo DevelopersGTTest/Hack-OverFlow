@@ -58,5 +58,13 @@ const init = async ()=> {
    `);
 }
 
+process.on('unhandledRejection', error => {
+    console.error('UnhandledRejection', error.message, error)
+})
+  
+process.on('unhandledException', error => {
+    console.error('unhandledException', error.message, error)
+})
+
 //Init del servidor
 init();
