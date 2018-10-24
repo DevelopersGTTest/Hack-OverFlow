@@ -7,10 +7,13 @@ const createUser = async (req, h)=>{
         result = await users.create(req.payload)
     } catch (error) {
         console.error(error)
-        return h.response(`Error Sucedio ${result}`).code(500)
+        return h.view('register', {
+            title: 'Registrar',
+            error: 'No se pudo crear el usuario' 
+        })
     }
 
-    return h.response(`Usuario creado ${result}`)
+    return h.redirect('/login')
 }
 
 const logout = (req, h)=>{
@@ -22,11 +25,17 @@ const validateUser = async (req, h)=>{
     try {
         result = await users.validateUser(req.payload)
         if(!result){
-            return h.response(`Usuario o contraseña incorrecta`).code(400)
+            return h.view('login', {
+                title: 'login',
+                error: 'Usuario o contraseña incorrecta'
+            })
         }
     } catch (error) {
         console.error(error)
-        return h.response(`Error al validar el usuario ${result}`).code(500)
+        return h.view('login', {
+              title: 'login',
+              error: 'Error al validar el usuario' 
+        })  
     }
 
     return h.redirect('/').state('user', {

@@ -58,6 +58,7 @@ const init = async ()=> {
    `);
 }
 
+//Mostrando los errores en la consola
 process.on('unhandledRejection', error => {
     console.error('UnhandledRejection', error.message, error)
 })
