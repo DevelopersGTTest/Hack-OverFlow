@@ -19,12 +19,20 @@ const server = hapi.server({
 });
 
 
-async function init () {
+const init = async ()=> {
     try {
     
      //Permitiendo el acceso a servir el template   
     await server.register(inert)
     await server.register(vision)
+
+    //Configurando el State
+    server.state('user', {
+        ttl: 1000 * 60 * 60 * 24 * 7,
+        isSecure: process.env.NODE_ENV === 'prod',
+        encoding: 'base64json'
+      })
+
 
     //Implementando un objeto de configuracion
     server.views({

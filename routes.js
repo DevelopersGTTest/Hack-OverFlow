@@ -12,6 +12,29 @@ module.exports = [
 },
 {
     method: 'GET',
+    path: '/login',
+    handler: site.login
+},
+{
+    method: 'GET',
+    path: '/logout',
+    handler: user.logout
+}, 
+{
+    method: 'POST',
+    options: {
+        validate: {
+            payload: {
+                email: joi.string().email().required(),
+                password: joi.string().required().min(6)
+            }
+        }
+    },
+    path: '/validate-user',
+    handler: user.validateUser
+},
+{
+    method: 'GET',
     path: '/register',
     handler: site.register
 },
