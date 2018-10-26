@@ -1,5 +1,6 @@
 const site = require('./controllers/site');
 const user = require('./controllers/user');
+const question = require('./controllers/question');
 
 //Especialmente para validar Ambos Extremos
 const joi = require('joi');
@@ -51,6 +52,24 @@ module.exports = [
     },
     path: '/create-user',
     handler: user.createUser
+},
+{
+    method: 'GET',
+    path: '/ask',
+    handler: site.ask
+},
+{
+    method: 'POST',
+    path: '/create-question',
+    handler: question.createQuestion,
+    options: {
+        validate: {
+            payload: {
+                title: joi.string().required(),
+                description: joi.string().required()  
+            }
+        }
+    }
 },
 {
     method: 'GET',
