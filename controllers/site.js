@@ -1,9 +1,19 @@
+const questions = require('../models/index').questions
 
 //Ruta de home
-const home = (req, h)=>{
+const home = async (req, h)=>{
+    let data
+    try {
+        data = await questions.getLast(10)
+    } catch (error) {
+        console.error(`
+            Existe un error y es ${error}
+        `)
+    }
     return h.view('index', {
         title: 'home',
-        user: req.state.user
+        user: req.state.user,
+        questions: data
       })
 }
 
