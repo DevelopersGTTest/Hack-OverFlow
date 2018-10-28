@@ -50,6 +50,30 @@ const ask = (req, h)=> {
       user: req.state.user
     })
   }
+
+  const viewQuestion = async (req, h)=>{
+    let data
+    try {
+        data = await questions.getOne(req.params.id)
+        if(!data){
+            return h.view('index', {
+                title: 'home',
+                user: req.state.user,
+                questions: data
+            })    
+        }
+        //alert(`No se encontro nada ${data}`)
+    } catch (error) {
+        console.error(error)
+    }
+
+    return h.view('question', {
+      title: 'Detalles de pregunta',
+      user: req.state.user,
+      question: data,         //La data ya obtenida
+      key: req.params.id      //El id que viene como parametros
+    })
+  }
   
 
 module.exports = {
@@ -57,4 +81,5 @@ module.exports = {
     home: home,
     login: login,
     register: register,
+    viewQuestion: viewQuestion
   }
