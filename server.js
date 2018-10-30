@@ -8,6 +8,12 @@ const vision = require('vision');
 //Importando las rutas
 const routes = require('./routes');
 
+//Helpers
+handlebars.registerHelper('answerNumber', (answers) => {
+    const keys = Object.keys(answers)
+    return keys.length
+})
+
 const server = hapi.server({
     port: process.env.PORT || 3000,
     host: 'localhost',

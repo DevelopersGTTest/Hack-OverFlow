@@ -27,6 +27,11 @@ class Questions {
     return data
   }
 
+  async answer (data, user) {
+    const answers = await this.collection.child(data.id).child('answers').push()
+    answers.set({text: data.answer, user: user})
+    return answers
+  }
 }
 
 module.exports = Questions
