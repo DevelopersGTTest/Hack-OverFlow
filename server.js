@@ -2,17 +2,12 @@
 const hapi = require('hapi');
 const inert = require('inert'); //Puedo servir archivos o renderizar toda la vista
 const path = require('path');
-const handlebars = require('handlebars');
+const methods = require('./lib/methods')
+const handlebars = require('./lib/helpers');
 const vision = require('vision');
 
 //Importando las rutas
 const routes = require('./routes');
-
-//Helpers
-handlebars.registerHelper('answerNumber', (answers) => {
-    const keys = Object.keys(answers)
-    return keys.length
-})
 
 const server = hapi.server({
     port: process.env.PORT || 3000,
@@ -31,6 +26,9 @@ const init = async ()=> {
      //Permitiendo el acceso a servir el template   
     await server.register(inert)
     await server.register(vision)
+
+    //Configurando Metodos de servidor
+    server.method('setAnswerRight', methods.setAnswerRight)
 
     //Configurando el State
     server.state('user', {
