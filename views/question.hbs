@@ -18,7 +18,7 @@
           {{#with user}}
             {{#ifEquals ../../question.owner.email ../../user.email}}
               {{#unless answer.correct}}
-                <a href="/answer/{{../../../../key}}/{{key}}" class="btn btn-primary" role="button">Elegir respuesta correcta</a>
+                <a href="/answer/{{../../../key}}/{{key}}" class="btn btn-primary" role="button">Elegir respuesta correcta</a>
               {{/unless}}
             {{/ifEquals}}
           {{/with}}
