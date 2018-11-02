@@ -1,12 +1,14 @@
 ## HapiJS
-Preguntas y Respuestas desde JavaScript, alternativas a Express.js  
 ![alt text](https://hapijs.com/public/img/logo.svg "Logo Title Text 1")
+Preguntas y Respuestas desde JavaScript, alternativas a Express.js  
 
-##Firebase config
+## Firebase config
 npm install firebase-admin --save , dependencia para la configuracion
 
 
 # API Implements
 
-GET:    /api/questions/{amount}
-GET:Id  /api/questions/
+| END-POOINTS   |         API_URL         | Status |
+| ------------- |:-----------------------:| ------:|
+|      GET/ID   | /api/questions/{amount} | Active |
+|      GET      | /api/questions/         | Active |  
