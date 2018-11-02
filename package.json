@@ -21,6 +21,9 @@
   "dependencies": {
     "bcrypt": "^3.0.2",
     "firebase-admin": "^6.0.0",
+    "good": "^8.1.1",
+    "good-console": "^7.1.0",
+    "goog": "^0.2.1",
     "handlebars": "^4.0.12",
     "hapi": "^17.6.0",
     "inert": "^5.1.0",

@@ -17,8 +17,8 @@ const createQuestion = async (req, h)=> {
       error: 'Problemas creando la pregunta'
     })
   }
-
-  return h.response(`Pregunta creada con el ID ${result}`)
+  return h.redirect(`/question/${result}`)
+  //return h.response(`Pregunta creada con el ID ${result}`)
 }
 
 const answerQuestion = async (req, h)=>{
