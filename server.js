@@ -6,6 +6,8 @@ const good = require('good')
 const methods = require('./lib/methods')
 const handlebars = require('./lib/helpers');
 const vision = require('vision');
+const blankie = require('blankie')
+const scooter = require('scooter')
 
 //Importando las rutas
 const routes = require('./routes');
@@ -58,6 +60,20 @@ const init = async ()=> {
         encoding: 'base64json'
       })
 
+
+    /*
+        CROSS Site Scripting
+      await server.register([scooter, {
+      plugin: blankie,
+      options: {
+        defaultSrc: `'self' 'unsafe-inline'`,
+        styleSrc: `'self' 'unsafe-inline' https://maxcdn.bootstrapcdn.com`,
+        fontSrc: `'self' 'unsafe-inline' data:`,
+        scriptSrc: `'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://maxcdn.bootstrapcdn.com/ https://code.jquery.com/`,
+        generateNonces: false
+      }
+    }])
+      */
 
     //Implementando un objeto de configuracion
     server.views({
