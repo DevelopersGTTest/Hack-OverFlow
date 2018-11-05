@@ -20,6 +20,7 @@
   "homepage": "https://github.com/DevelopersGTTest/Hack-OverFlow#readme",
   "dependencies": {
     "bcrypt": "^3.0.2",
+    "blankie": "^4.0.0",
     "firebase-admin": "^6.0.0",
     "good": "^8.1.1",
     "good-console": "^7.1.0",
@@ -29,6 +30,7 @@
     "inert": "^5.1.0",
     "joi": "^14.0.0",
     "nodemon": "^1.18.4",
+    "scooter": "^5.0.0",
     "vision": "^5.4.0"
   }
 }
