@@ -12,8 +12,13 @@ const scooter = require('scooter')
 //Importando las rutas
 const routes = require('./routes');
 
+//"nodemon": "nodemon server.js --ext js,hbs",
+
+const P = 3000;
+
 const server = hapi.server({
-    port: process.env.PORT || 3000,
+    //port: process.env.PORT || 3000,
+    port: P,   
     host: 'localhost',
     routes: {
         files: {
